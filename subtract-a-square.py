@@ -28,7 +28,6 @@ import random
 import time
 
 NEWPLAYER = True
-NORMALPLAY = True
 
 RULES = """This is the Subtract-a-square game.
 The rules are as follows:
@@ -115,7 +114,7 @@ while initial > 0:
     print "Subtracting {}^2 = {}.".format(number, number ** 2)
     initial -= number ** 2  # the customer is always right?
     if not initial:
-        player_won = NORMALPLAY  # ughhhhh
+        player_won = True  # ughhhhh
         break  # now
     declare_number()
     # computer's turn
@@ -127,7 +126,7 @@ while initial > 0:
     print "Subtracting {}^2 = {}.".format(sqrt(small_win), small_win)
     declare_number()
     if not initial:
-        player_won = not NORMALPLAY  # we win!
+        player_won = False  # we win!
 
 if player_won:
     print "Congratulations! You won!"  # we gotta be kind, you know
